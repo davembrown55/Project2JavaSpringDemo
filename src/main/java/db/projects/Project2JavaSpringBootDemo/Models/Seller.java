@@ -72,11 +72,11 @@ public class Seller {
         this.phone = phone;
     }
 
-    public List<Property> getProperties() {
-        return this.properties;
-    }
-
-    public void setProperties(List<Property> properties) {
-        this.properties = properties;
-    }
+//    public List<Property> getProperties() {
+//        return this.properties;
+//    }
+//
+//    public void setProperties(List<Property> properties) {
+//        this.properties = properties;
+//    }
 }
