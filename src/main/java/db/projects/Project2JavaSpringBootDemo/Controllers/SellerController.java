@@ -5,6 +5,7 @@ import db.projects.Project2JavaSpringBootDemo.Models.Property;
 import db.projects.Project2JavaSpringBootDemo.Models.Seller;
 import db.projects.Project2JavaSpringBootDemo.Services.SellerServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -20,6 +21,10 @@ public class SellerController {
     public String saveSeller(@RequestBody Seller seller) {
         return this.Service.saveSeller(seller);
     }
+    @PostMapping("/addNewPropertyToSeller/{id}")
+    public String addNewPropToSeller(@PathVariable("id") Long id,  @RequestBody Property property) {return this.Service.addNewPropToSeller(id, property);}
+
+
     @GetMapping("/getAllSellers")
     public List<Seller> getAllSellers () {
         return this.Service.getAll();
@@ -42,8 +47,9 @@ public class SellerController {
                                @RequestParam(required = false) String address,
                                @RequestParam(required = false) String postcode,
                                @RequestParam(required = false) String email,
-                               @RequestParam(required = false) String phone) {
-        return this.Service.updateSeller(id, firstName, surname, address, postcode, email, phone);
+                               @RequestParam(required = false) String phone,
+                               @RequestParam(required = false) Long propertyId ) {
+        return this.Service.updateSeller(id, firstName, surname, address, postcode, email, phone, propertyId);
     }
 //    @GetMapping("/listAllSellersProperties/{id}")
 //    public List<Property> sellersProps (@PathVariable("id") Long id) {

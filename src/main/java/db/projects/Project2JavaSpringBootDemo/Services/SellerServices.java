@@ -1,6 +1,8 @@
 package db.projects.Project2JavaSpringBootDemo.Services;
+import db.projects.Project2JavaSpringBootDemo.Models.Buyer;
 import db.projects.Project2JavaSpringBootDemo.Models.Property;
 import db.projects.Project2JavaSpringBootDemo.Models.Seller;
+import db.projects.Project2JavaSpringBootDemo.repositories.PropertyRepo;
 import db.projects.Project2JavaSpringBootDemo.repositories.SellerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,9 @@ import java.util.Optional;
 public class SellerServices {
     @Autowired
     SellerRepo repo;
+
+    @Autowired
+    PropertyRepo pRepo;
 
     public String saveSeller (Seller seller) {
         repo.save(seller);
@@ -38,7 +43,7 @@ public class SellerServices {
         }
     }
     public String updateSeller(Long id, String firstName, String surname, String address,
-                              String postcode, String email, String phone) {
+                              String postcode, String email, String phone, Long propertyId) {
         if(this.getById(id) == null){
             return "Error no records with that ID exist";
         } else {
@@ -51,14 +56,42 @@ public class SellerServices {
             if (email != null) toUpdate.setEmail(email);
             if (phone != null) toUpdate.setPhone(phone);
 
+            if (propertyId != null) {
+                Property newProp = getPropById(propertyId);
+                toUpdate.addProperty(newProp);
+            }
+
             this.repo.save(toUpdate);
-            return toUpdate.getAddress() + " was updated";
+            return toUpdate.getFirstName() + " " + toUpdate.getSurname() + " was updated";
             }
         }
+
+    public Property getPropById (Long id) {
+        Property p = null;
+        Optional<Property> optionalAddress = this.pRepo.findById(id);
+        if (optionalAddress.isPresent()) {
+            p = optionalAddress.get();
+        }
+        return p;
+    }
+
+    public String addNewPropToSeller (Long id, Property prop) {
+        if(this.getById(id) == null){
+            return "Error no records with that ID exist";
+        } else {
+            Seller toUpdate = this.getById(id);
+            if (prop != null) {
+                toUpdate.addProperty(prop);
+            }
+            this.repo.save(toUpdate);
+            return toUpdate.getFirstName() + " " + toUpdate.getSurname() + " was updated";
+        }
+    }
 //    public List<Property> sellersProps (Long id) {
 //        List<Property> sellerPropList = Seller.getProperties();
 //
 //        return sellerPropList;
 //        }
+
 }
 

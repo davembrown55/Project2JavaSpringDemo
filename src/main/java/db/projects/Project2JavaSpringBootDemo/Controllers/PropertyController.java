@@ -25,6 +25,15 @@ public class PropertyController {
         return this.pService.getById(id);
     }
 
+    @GetMapping("/GetAllPropertiesBySellerId/{id}")
+    public  List<Property> GetallpropertiesBySellerId (@PathVariable("id") Long id) {
+        return this.pService.findBySellerId(id);
+    }
+
+    @GetMapping("/GetAllPropertiesByBuyerId/{id}")
+    public  List<Property> GetallpropertiesByBuyerId (@PathVariable("id") Long id) {
+        return this.pService.findByBuyerId(id);
+    }
 
     @DeleteMapping("/removeProperty/{id}")
     public String  deleteProperty (@PathVariable("id") Long id){

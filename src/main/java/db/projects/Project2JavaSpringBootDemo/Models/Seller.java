@@ -1,7 +1,9 @@
 package db.projects.Project2JavaSpringBootDemo.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,8 +15,13 @@ public class Seller {
     private String firstName, surname, address, postcode, email;
     private String phone;
 
-    @OneToMany(mappedBy = "seller")
-    private List<Property> properties;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "seller")
+    @JsonManagedReference(value="seller-prop")
+    private List<Property> properties = new ArrayList<>();
+
+
+
+    public Seller() {}
 
     public long getSellerId() {
         return sellerId;
@@ -72,11 +79,25 @@ public class Seller {
         this.phone = phone;
     }
 
-//    public List<Property> getProperties() {
-//        return this.properties;
-//    }
-//
+    public List<Property> getProperties() {
+        return properties;
+    }
+
+    public void addProperty(Property property) {
+        this.properties.add(property);
+        property.setSeller(this);
+    }
+    public void removeProperty(Property property) {
+        property.setSeller(null);
+        this.properties.remove(property);  //swap order?
+    }
+
+
 //    public void setProperties(List<Property> properties) {
 //        this.properties = properties;
+//
+//        for(Property p: properties) {
+//            p.setSeller(this);
+//        }
 //    }
 }

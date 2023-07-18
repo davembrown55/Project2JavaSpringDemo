@@ -36,7 +36,6 @@ public class BookingController {
         return this.Service.getById(id);
     }
 
-
     @DeleteMapping("/removeBooking/{id}")
     public String  deleteBooking (@PathVariable("id") Long id){
         return this.Service.deleteBooking(id);
@@ -49,5 +48,14 @@ public class BookingController {
                                 /*, @RequestParam(required = false) LocalTime time */) {
         return this.Service.updateBooking(id, date /*, time*/);
     }
+    @GetMapping("/GetAllBookingsByPropertyId/{id}")
+    public  List<Booking> getAllBookingsByPropertyId (@PathVariable("id") Long id) {
+        return this.Service.findByProperty_PropertyId(id);
+    }
+    @GetMapping("/GetAllBookingsByBuyerId/{id}")
+    public  List<Booking> getAllBookingsByBuyerId (@PathVariable("id") Long id) {
+        return this.Service.findByBuyer_BuyerId(id);
+    }
+
 
 }

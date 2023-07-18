@@ -1,5 +1,7 @@
 package db.projects.Project2JavaSpringBootDemo.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -20,13 +22,17 @@ public class Property {
     @Column(name="status")
     private propStatus status;
 
-    @ManyToOne(cascade= CascadeType.ALL )
-    @JoinColumn(name="sellerId", referencedColumnName = "sellerId")
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name="sellerId"/*, referencedColumnName = "sellerId"*/)
+    @JsonBackReference(value="seller-prop")
     private Seller seller;
 
-    @ManyToOne (cascade= CascadeType.ALL)
-    @JoinColumn(name="buyerId", referencedColumnName = "buyerId")
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn(name="buyerId" /*, referencedColumnName = "buyerId"*/)
+    @JsonBackReference(value="buyer-prop")
     private Buyer buyer;
+
+    public Property() {}
 
     public boolean canBookViewing() {
         return getStatus() == propStatus.FORSALE;
@@ -104,6 +110,18 @@ public class Property {
         this.status = status;
     }
 
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public void setBedrooms(Integer bedrooms) {
+        this.bedrooms = bedrooms;
+    }
+
+    public void setBathrooms(Integer bathrooms) {
+        this.bathrooms = bathrooms;
+    }
+
     public Seller getSeller() {
         return seller;
     }
@@ -119,4 +137,17 @@ public class Property {
     public void setBuyer(Buyer buyer) {
         this.buyer = buyer;
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if(this == o) return true;
+//        if(!(o instanceof Property)) return false;
+//        return propertyId != null && propertyId.equals(((Property) o).getPropertyId());
+//    }
+//    @Override
+//    public int hashcode() {
+//        return getClass().hashCode();
+//    }
+
+
 }

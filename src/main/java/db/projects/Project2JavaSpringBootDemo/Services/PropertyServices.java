@@ -36,6 +36,13 @@ public class PropertyServices {
         }
         return p;
     }
+
+    public List<Property> findBySellerId (Long id) {
+        return this.repo.findBySeller_SellerId(id);
+    }
+    public List<Property> findByBuyerId (Long id) {
+        return this.repo.findByBuyer_BuyerId(id);
+    }
     public String deleteProp(Long id) {
         if (this.getById(id)== null){
             return "Error no records with that ID exist";

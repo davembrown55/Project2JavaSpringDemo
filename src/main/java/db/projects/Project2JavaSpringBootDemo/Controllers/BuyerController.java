@@ -2,6 +2,7 @@ package db.projects.Project2JavaSpringBootDemo.Controllers;
 
 
 import db.projects.Project2JavaSpringBootDemo.Models.Buyer;
+import db.projects.Project2JavaSpringBootDemo.Models.Property;
 import db.projects.Project2JavaSpringBootDemo.Services.BuyerServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,9 @@ public class BuyerController {
     public String saveBuyer(@RequestBody Buyer buyer) {
         return this.Service.saveBuyer(buyer);
     }
+    @PostMapping("/addNewPropertyToBuyer/{id}")
+    public String addNewPropToBuyer(@PathVariable("id") Long id,  @RequestBody Property property) {return this.Service.addNewPropToBuyer(id, property);}
+
     @GetMapping("/getAllBuyers")
     public List<Buyer> getAllBuyers () {
         return this.Service.getAll();
@@ -39,8 +43,9 @@ public class BuyerController {
                                   @RequestParam(required = false) String address,
                                   @RequestParam(required = false) String postcode,
                                   @RequestParam(required = false) String email,
-                                  @RequestParam(required = false) String phone) {
-        return this.Service.updateBuyer(id, firstName, surname, address, postcode, email, phone);
+                                  @RequestParam(required = false) String phone,
+                               @RequestParam(required = false) Long propertyId) {
+        return this.Service.updateBuyer(id, firstName, surname, address, postcode, email, phone, propertyId);
     }
 
 

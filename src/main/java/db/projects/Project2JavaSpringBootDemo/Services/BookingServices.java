@@ -61,6 +61,14 @@ public class BookingServices {
             return "Booking Updated";
         }
     }
+    public List<Booking> findByProperty_PropertyId (Long id) {
+        return this.repo.findByProperty_PropertyId(id);
+    }
+    public List<Booking> findByBuyer_BuyerId (Long id) {
+        return this.repo.findByBuyer_BuyerId(id);
+    }
+
+
 
     public Property getPropById (Long id) {
         Property p = null;

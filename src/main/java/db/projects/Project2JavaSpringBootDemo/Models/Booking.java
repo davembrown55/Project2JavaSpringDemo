@@ -15,17 +15,19 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long bookingId;
 
-    @OneToOne
-    @JoinColumn(name="fk_property_id,", referencedColumnName = "propertyId")
+    @ManyToOne
+    @JoinColumn(name= "propertyId")
     private Property property;
-    @OneToOne
-    @JoinColumn(name="fk_buyer_id,", referencedColumnName = "buyerId")
+    @ManyToOne
+    @JoinColumn(name= "buyerId")
     private Buyer buyer;
     @Column(name="DATE")
     private LocalDateTime date;
 //    @Column(name="TIME")
 //    //@JsonFormat(/*shape = JsonFormat.Shape.STRING,*/ pattern = "HH:mm:ss")
 //    private LocalTime time;
+
+    public Booking() {}
 
     public long getBookingId() {
         return bookingId;
