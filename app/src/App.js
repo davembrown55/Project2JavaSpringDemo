@@ -6,6 +6,7 @@ import LandingPage from './components/LandingPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.css';
 import AllSellers from './components/AllSellers';
+import Properties from './components/Properties/Properties.jsx'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/getAllSellers" element ={<AllSellers />} />
             <Route path="/buyer" element={<BuyerForm />} />
             <Route path="/LandingPage" element={<LandingPage />}/>
+            <Route path="/Properties" element={<Properties />}/>
           </Routes>
         </main>
 

@@ -1,0 +1,78 @@
+
+.cardImage {
+    width: 250px ;
+  }
+  
+  
+.book-viewing {
+     
+      /* background: rgb(100,163,111);
+      background: -moz-linear-gradient(260deg, rgba(100,163,111,1) 0%, rgba(100,163,111,1) 34%, rgba(206,240,185,1) 100%);
+      background: -webkit-linear-gradient(260deg, rgba(100,163,111,1) 0%, rgba(100,163,111,1) 34%, rgba(206,240,185,1) 100%);
+      background: linear-gradient(260deg, rgba(100,163,111,1) 0%, rgba(100,163,111,1) 34%, rgba(206,240,185,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#64a36f",endColorstr="#cef0b9",GradientType=1);
+  
+      padding: 10px 10px;
+      border-radius: 10px;
+      color: black;
+      border: 0; */
+  
+      margin-top: 5px;
+      display: inline-block;
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 20px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      transition-duration: .3s;
+      border: 1px solid transparent;
+      letter-spacing: 2px;
+      min-width: 150px;
+      text-transform: uppercase;
+      white-space: normal;
+      font-weight: 700;
+      text-align: center;
+      padding: 16px ;
+      color: #fbfae1;
+      background-color: #64a36f;
+      height: 48px;}
+  
+.book-viewing:hover{
+    background-color: #cef0b9;
+    color: #395f3f;
+}
+  
+    
+    /* .add-to-cart:hover {
+      background-color: rgba(68, 75, 68, 0.06);
+      background-color: #004445; */
+      
+    /* } */
+  
+    .viewing-booked {
+      margin-top: 5px;
+      display: inline-block;
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 20px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      transition-duration: .3s;
+      border: 1px solid transparent;
+      letter-spacing: 2px;
+      min-width: 100px;
+      text-transform: uppercase;
+      white-space: normal;
+      font-weight: 700;
+      text-align: center;
+      padding: 16px ;
+      color: #fbfae1;
+      background-color: #64a36f;
+      height: 48px;}
+  
+    .viewing-booked:hover{
+        background-color: #cef0b9;
+        color: #395f3f;
+    }

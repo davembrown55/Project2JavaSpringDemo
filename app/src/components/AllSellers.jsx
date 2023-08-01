@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import {Button,ButtonGroup,Container,Table} from 'reactstrap';
 
 
+
  const AllSellers = () => {
     const [sellers, setSellers] = useState ([]);
     const [loading,setLoading] = useState(false);
@@ -13,7 +14,7 @@ import {Button,ButtonGroup,Container,Table} from 'reactstrap';
     useEffect(() => {
         setLoading(true);
         //Fetch data from the JSON server
-        fetch('/getAllSellers/')
+        fetch('getAllSellers/')
             .then(response => response.json())
             .then(data => {
             setSellers(data);
@@ -39,11 +40,11 @@ import {Button,ButtonGroup,Container,Table} from 'reactstrap';
         const sellerList = sellers.map(seller => {
         const address = `${seller.title || ''}${seller.firstname || ''}${seller.address || ''}${seller.postcode || ''}${seller.phone || ''}`;
         return <tr key ={seller.id}>
-        <td style={{whiteSpace:'nowrap'}}>{seller.name}</td>
+        <td style={{whiteSpace:'nowrap'}}>{seller.firstname}</td>
             <td>{address}</td>
             <td>
             <ButtonGroup>
-            <Button size="sm" color="primary" tag={Link} to={"east/getAllSellers" + seller.id}>Edit</Button>
+            <Button size="sm" color="primary" tag={Link} to={"/getAllSellers" + seller.id}>Edit</Button>
             <Button size="sm" color="danger" onClick={() => remove(seller.id)}>Delete</Button>
             </ButtonGroup>
             </td>
