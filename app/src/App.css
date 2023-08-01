@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Dancing+Script&family=Handlee&display=swap');
+
+  nav {
+    box-shadow: rgba(0,0,0,0.08) 0 5px 8px;
+  }
+
+  nav h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background-image: linear-gradient( to right, #118a7e, white);
+    color: white;
+    text-align: left;
+    font-family: 'Bruno Ace';
+
+  }
+
+  nav h5 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background-color: #118a7e;
+    color: white;
+    font-family: 'Dancing Script';
+    font-size: 40px;
+  }
+
+  nav ul {
+    color: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: rgba(0,0,0,0.08) 0 5px 8px;
+  }
+
+  nav p, a {
+  margin: 0;
+  color: #aaaaaa;
+  text-decoration: none;
+  }
+
+
+
+  nav a:hover {
+    color: #004445;
+    background-color: rgba(250, 245, 228, 1);
+    border-radius: 3px;
+  }
+
+  main {margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: #94cbcc;
+  }
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+button{
+
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+button:active {
+  opacity: .5;
+}
+.success{
+  border:2px solid limegreen;
+}
+.error{
+  border:2px solid crimson;
+}
+.landing{
+  background-image: linear-gradient( to right, #118a7e, white);
+}

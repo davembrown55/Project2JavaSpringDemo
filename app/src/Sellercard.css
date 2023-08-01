@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .wrapper img {
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+  }
+
+  .items-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .item-card {
+    margin-left: 20px;
+    margin-top: 20px;
+    width:80%;
+    padding: 1rem;
+    border-radius: 20px;
+    background: #f5f4eb;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+                text-align:left;
+  }
+
+  .item-card .symbol {
+    font-size: 2rem;
+  }
+
+  .item-card h3 {
+    margin-bottom: 0.5rem;
+  }
