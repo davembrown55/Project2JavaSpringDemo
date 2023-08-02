@@ -30,7 +30,7 @@ const HouseCard = ({ id, type, address, postcode, imageUrl, price, bedroom, bath
                     <button onClick={flipButtonText} 
                     className={styles[whenClicked ? 'viewing-booked' : 'book-viewing']}
                     >
-                        {whenClicked ? 'Viewing Booked' : 'Book Viewing' }          
+                        {whenClicked ? 'Viewing Booked' : 'Book Viewing' }         
                     </button>
                     
                  </div>

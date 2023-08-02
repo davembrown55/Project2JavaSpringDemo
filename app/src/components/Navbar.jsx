@@ -6,7 +6,7 @@ export default function Navbar() {
             <h5>For your new home, head east</h5>
             <ul>
                 <li>
-                    <Link to ="/Property">Property</Link>
+                <Link to ="/Properties">Properties</Link>
                 </li>
                 <li>
                     <Link to ="/buyer">Buyer</Link>

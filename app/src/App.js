@@ -20,7 +20,7 @@ function App() {
             <Route path="/getAllSellers" element ={<AllSellers />} />
             <Route path="/buyer" element={<BuyerForm />} />
             <Route path="/LandingPage" element={<LandingPage />}/>
-            <Route path="/Properties" element={<Properties />}/>
+            <Route path="/Properties" element={<Properties />} />
           </Routes>
         </main>
 
