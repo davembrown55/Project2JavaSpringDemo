@@ -1,9 +1,9 @@
 import React, {useEffect, useReducer, useState} from "react";
-// import {Link} from "react-router-dom";
 import "./property.css";
 import Housecard from './HouseCard';
 
-const Properties =  () => {
+function Properties () {
+
     const [data, setData] = useState ([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Properties =  () => {
        
        <div className="App">
         <main>
-            <h2>Browse our Properties</h2>
+            <h2>Current Properties</h2>
             <div>
             <input placeholder="Search for properties" onChange={event => setQuery(event.target.value)}/>
             </div>
@@ -35,9 +35,7 @@ const Properties =  () => {
                     } else if (item.type.toLowerCase().includes(query.toLowerCase()) || (item.forSale.toLowerCase().includes(query.toLowerCase()) || (item.address.toLowerCase().includes(query.toLowerCase()) || (item.postcode.toLowerCase().includes(query.toLowerCase()) )))) {
                         return item;
                     }
-                }).map((item) =>(
-                // {data.map((item) => (
-                   
+                }).map((item) =>(                   
                     <Housecard 
                     id={item.id}
                     type={item.type}
