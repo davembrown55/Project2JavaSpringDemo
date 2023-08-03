@@ -12,16 +12,22 @@ public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long sellerId;
-    private String firstName, surname, address, postcode, email;
+    private String title, firstName, surname, address, postcode, email;
     private String phone;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "seller")
     @JsonManagedReference(value="seller-prop")
     private List<Property> properties = new ArrayList<>();
 
-
-
     public Seller() {}
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public long getSellerId() {
         return sellerId;

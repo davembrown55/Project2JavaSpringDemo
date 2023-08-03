@@ -12,7 +12,7 @@ public class Buyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long buyerId;
-    private String firstName, surname, address, postcode, email;
+    private String title, firstName, surname, address, postcode, email;
     private String phone;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "buyer")
@@ -26,6 +26,12 @@ public class Buyer {
 
     public void setBuyerId(long buyerId) {
         this.buyerId = buyerId;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getFirstName() {
