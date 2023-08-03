@@ -24,7 +24,7 @@ const BuyerForm = () => {
         const buyers = { buyertitle, buyerfirstname, buyersurname, buyeraddress, buyerpostcode, buyerphone };
 
 
-    fetch('http://localhost:3000/buyers/', {
+    fetch('api/saveBuyer', {
      method: 'POST',
       headers: { "Content-Type": "application/json" },
      body: JSON.stringify(buyers)
