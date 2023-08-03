@@ -4,6 +4,7 @@ package db.projects.Project2JavaSpringBootDemo.Controllers;
 import db.projects.Project2JavaSpringBootDemo.Models.Buyer;
 import db.projects.Project2JavaSpringBootDemo.Models.Property;
 import db.projects.Project2JavaSpringBootDemo.Services.BuyerServices;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class BuyerController {
     BuyerServices Service;
 
     @PostMapping
-    public String saveBuyer(@RequestBody Buyer buyer) {
+    public String saveBuyer(@Valid @RequestBody Buyer buyer) {
         return this.Service.saveBuyer(buyer);
     }
     @PostMapping("/addNewPropertyToBuyer/{id}")

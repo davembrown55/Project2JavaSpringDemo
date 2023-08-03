@@ -21,13 +21,27 @@ const BuyerForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const buyers = { buyertitle, buyerfirstname, buyersurname, buyeraddress, buyerpostcode, buyerphone };
+        const buyers = {
+        title: buyertitle,
+        firstName: buyerfirstname,
+        surname: buyersurname,
+        address: buyeraddress,
+        postcode: buyerpostcode,
+        phone: buyerphone
+        };
 
 
-    fetch('api/saveBuyer', {
+    fetch(`http://localhost:8080/api/buyer`, {
      method: 'POST',
       headers: { "Content-Type": "application/json" },
      body: JSON.stringify(buyers)
+   })
+   .then(response => {
+   if (response.ok) console.log ("success")
+   else return (response.json())
+   })
+   .catch(error => {
+   console.log (error)
    })
    setBuyerTitle('');
    setBuyerFname('');
@@ -38,7 +52,7 @@ const BuyerForm = () => {
 }
 
    return (
-        <Form>
+        <Form onSubmit = {handleSubmit}>
           <Form.Label>Enter new Buyer</Form.Label>
             <Row className="mb-3">
             <Form.Group as={Col} controlId="formtitle">
@@ -92,4 +106,5 @@ const BuyerForm = () => {
 
    )
 }
+
 export default BuyerForm;

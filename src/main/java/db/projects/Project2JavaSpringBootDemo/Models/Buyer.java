@@ -2,6 +2,8 @@ package db.projects.Project2JavaSpringBootDemo.Models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,10 @@ public class Buyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long buyerId;
-    private String title, firstName, surname, address, postcode, email;
+    private String title, firstName, surname, address, postcode;
+    @Email
+    private String email;
+    @NotEmpty
     private String phone;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "buyer")
