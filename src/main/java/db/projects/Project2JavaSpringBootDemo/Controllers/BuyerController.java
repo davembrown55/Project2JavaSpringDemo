@@ -8,24 +8,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/api/buyer")
 @RestController
+
+@CrossOrigin("*")
 public class BuyerController {
     @Autowired
     BuyerServices Service;
 
-    @PostMapping("/saveBuyer")
+    @PostMapping
     public String saveBuyer(@RequestBody Buyer buyer) {
         return this.Service.saveBuyer(buyer);
     }
     @PostMapping("/addNewPropertyToBuyer/{id}")
     public String addNewPropToBuyer(@PathVariable("id") Long id,  @RequestBody Property property) {return this.Service.addNewPropToBuyer(id, property);}
 
-    @GetMapping("/getAllBuyers")
+    @GetMapping
     public List<Buyer> getAllBuyers () {
         return this.Service.getAll();
     }
-    @GetMapping("/getBuyerById/{id}")
+    @GetMapping("/{id}")
     public Buyer findById(@PathVariable("id") Long id) {
         return this.Service.getById(id);
     }
