@@ -53,17 +53,7 @@ class App extends React.Component {
 
       </BrowserRouter>
 
-      <h1> All Buyers </h1> {
-      items.map((item) => (
-      <ol key = {item.id} >
-      First_Name: {item.firstName },
-      Sur_Name: { item.surname },
-      User_Address: {item.address },
-      Post_Code: {item.postcode},
-      Phone_Number: {item.phone}
-      </ol>
-      ))
-      }
+      
 
     </div>
   );

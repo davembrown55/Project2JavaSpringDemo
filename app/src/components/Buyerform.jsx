@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 //import { useNavigate} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
@@ -15,7 +15,18 @@ const BuyerForm = () => {
     const [buyerpostcode, setBuyerPostcode] = useState('');
     const [buyerphone, setBuyerPhone] = useState('');
 
+    const [items, setItems] = useState([]);
+    const [dataIsLoaded, setdataIsLoaded ] = useState(false);
 
+  useEffect(()=> {
+    fetch(
+      "http://localhost:8080/api/buyer")
+          .then((res) => res.json())
+          .then((json) => {
+            setItems(json)
+            setdataIsLoaded(true)
+          })
+  },[])
 
     //const navigate = useNavigate();
 
@@ -52,6 +63,7 @@ const BuyerForm = () => {
 }
 
    return (
+    <>
         <Form onSubmit = {handleSubmit}>
           <Form.Label>Enter new Buyer</Form.Label>
             <Row className="mb-3">
@@ -103,7 +115,21 @@ const BuyerForm = () => {
         Add buyer
       </Button>
     </Form>
-
+    {
+      dataIsLoaded && <><h1> All Buyers </h1> {
+      items.map((item) => (
+      <ol key = {item.id} >
+      First_Name: {item.firstName },
+      Sur_Name: { item.surname },
+      User_Address: {item.address },
+      Post_Code: {item.postcode},
+      Phone_Number: {item.phone}
+      </ol>
+      ))
+      }
+      </>
+      }
+  </>
    )
 }
 

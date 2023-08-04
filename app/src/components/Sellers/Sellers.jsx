@@ -16,7 +16,6 @@ function Sellers () {
 
     const [query, setQuery] = useState("")
 
-
     return (
        <div className="App">
         <main>
@@ -32,15 +31,24 @@ function Sellers () {
                         return item;
                     }
                 }).map((item) =>(                
-                    <div class="panel panel-primary">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">{item.id}{item.firstName}{item.surname}</h3>
-                    </div>
-                    <div class="panel-body">
-                      {item.address}{item.postcode}{item.phone}
-                    </div>
-                  </div>
-                ))}
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            {item.title},{item.firstName}{item.surname}
+                            </button>
+                            </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                            {item.address}{item.postcode}{item.phone}
+                            </div>
+                            </div>
+                        </div>
+                       </div> 
+                             ))
+                }
             </div>
         </main>
     </div>
@@ -48,4 +56,4 @@ function Sellers () {
 
 
 
-export default Sellers
+export default Sellers;
