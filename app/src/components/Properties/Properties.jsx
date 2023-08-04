@@ -1,21 +1,46 @@
 import React, {useEffect, useReducer, useState} from "react";
 import "./property.css";
 import Housecard from './HouseCard';
+import PropertyForm from './PropertyForm';
 
 function Properties () {
 
     const [data, setData] = useState ([]);
 
-    useEffect(() => {
-        //Fetch data from the JSON server
-        fetch('http://localhost:8080/property')
-            .then(response => response.json())
-            .then(data => setData(data));
+    //const [items, setItems] = useState([]);
+    const [dataIsLoaded, setdataIsLoaded ] = useState(false);
 
-    }, []);
+
+//Fetch data from the JSON server
+//     useEffect(() => {
+//         fetch('http://localhost:8000/property')
+//             .then(response => response.json())
+//             .then(data => setData(data));
+//
+//     }, []);
+      useEffect(()=> {
+        fetch(
+          "http://localhost:8080/api/properties")
+              .then((res) => res.json())
+              .then((json) => {
+                setData(json)
+                setdataIsLoaded(true)
+              })
+      },[])
+
 
     const [query, setQuery] = useState("")
 
+//         const handleSubmit = (event) => {
+//             event.preventDefault();
+//             const buyers = {
+//             title: buyertitle,
+//             firstName: buyerfirstname,
+//             surname: buyersurname,
+//             address: buyeraddress,
+//             postcode: buyerpostcode,
+//             phone: buyerphone
+//             };
 
     return (
     <div>
@@ -23,6 +48,8 @@ function Properties () {
        
        <div className="App">
         <main>
+            <PropertyForm/>
+
             <h2>Current Properties</h2>
             <div>
             <input placeholder="Search for properties" onChange={event => setQuery(event.target.value)}/>

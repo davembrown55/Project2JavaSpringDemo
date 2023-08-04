@@ -5,7 +5,7 @@ import styles from './Property.module.css'
 
 // Button click for viewing booking
 
-const HouseCard = ({ id, type, address, postcode, imageUrl, price, bedroom, bathroom, garden, forSale}) => {
+const HouseCard = ({    id, type, address, postcode, imageUrl, price, bedroom, bathroom, garden, forSale}) => {
 
 
 

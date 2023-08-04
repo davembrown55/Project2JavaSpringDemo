@@ -2,25 +2,28 @@ package db.projects.Project2JavaSpringBootDemo.Controllers;
 
 import db.projects.Project2JavaSpringBootDemo.Models.*;
 import db.projects.Project2JavaSpringBootDemo.Services.PropertyServices;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/api/properties")
 @RestController
+
+@CrossOrigin("*")
 public class PropertyController {
     @Autowired
     PropertyServices pService;
 
-    @PostMapping("/saveProperty")
-    public String saveProp(@RequestBody Property prop) {
+    @PostMapping/*("/saveProperty")*/
+    public String saveProp(@Valid @RequestBody Property prop) {
         return this.pService.saveProperty(prop);
     }
-    @GetMapping("/getAllProperties")
+    @GetMapping/*("/getAllProperties")*/
     public List<Property> getAllProps () {
         return this.pService.getAll();
     }
-    @GetMapping("/getPropertyById/{id}")
+    @GetMapping("/{id}")/*("/getPropertyById/{id}")*/
     public Property findById(@PathVariable("id") Long id) {
         return this.pService.getById(id);
     }
