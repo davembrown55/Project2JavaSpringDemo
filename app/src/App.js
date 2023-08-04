@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import SellerForm from './components/SellerForm';
+import SellerForm from './components/Sellers/SellerForm';
 import BuyerForm from './components/Buyerform';
 import LandingPage from './components/LandingPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +9,7 @@ import styles from './App.css';
 import Properties from './components/Properties/Properties.jsx'
 import React, { useEffect, useState } from 'react';
 import './App.css';
+
 
 function App() {
 // class App extends React.Component {
