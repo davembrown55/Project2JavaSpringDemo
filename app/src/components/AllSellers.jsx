@@ -76,6 +76,8 @@ import {Button,ButtonGroup,Container,Table} from 'reactstrap';
                 </Container>
                 </div>
 
+
+
         /* <div>
             <div>
            <div className="allSellers">

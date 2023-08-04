@@ -118,13 +118,32 @@ const BuyerForm = () => {
     {
       dataIsLoaded && <><h1> All Buyers </h1> {
       items.map((item) => (
-      <ol key = {item.id} >
-      First_Name: {item.firstName },
-      Sur_Name: { item.surname },
-      User_Address: {item.address },
-      Post_Code: {item.postcode},
-      Phone_Number: {item.phone}
-      </ol>
+               <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        {item.id}&nbsp;{item.firstName}&nbsp;{item.surname}
+                      </button>
+                      <button class="delete">Delete</button>
+                      <button class="update">Update</button>
+
+                    </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                      {item.address}&nbsp;{item.postcode}&nbsp;{item.phone}
+                    </div>
+                  </div>
+                </div>
+                </div>
+//       <ol key = {item.id} >
+//       First_Name: {item.firstName },
+//       Sur_Name: { item.surname },
+//       User_Address: {item.address },
+//       Post_Code: {item.postcode},
+//       Phone_Number: {item.phone}
+//       </ol>
       ))
       }
       </>
