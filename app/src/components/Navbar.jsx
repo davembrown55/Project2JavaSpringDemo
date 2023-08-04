@@ -11,11 +11,11 @@ export default function Navbar() {
                 <li>
                     <Link to ="/buyer">Buyer</Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to ="/seller">Add Seller</Link>
-                </li>
+                </li> */}
                 <li>
-                    <Link to ="/getAllSellers">All Sellers</Link>
+                    <Link to ="/seller">Sellers</Link>
                 </li>
                 <li>
                     <Link to ="/LandingPage">Login</Link>

@@ -92,3 +92,7 @@ ADD COLUMN title VARCHAR(15) AFTER BUYER_ID [42122-214]
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2023-08-03 14:46:17 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-08-04 12:21:58 jdbc[27]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-08-04 14:01:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

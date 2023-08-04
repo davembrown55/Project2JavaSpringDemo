@@ -1,5 +1,5 @@
 package db.projects.Project2JavaSpringBootDemo.Controllers;
-
+import jakarta.validation.Valid;
 
 import db.projects.Project2JavaSpringBootDemo.Models.Property;
 import db.projects.Project2JavaSpringBootDemo.Models.Seller;
@@ -12,20 +12,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Properties;
 
+@RequestMapping("/api/seller")
 @RestController
+@CrossOrigin("*")
 public class SellerController {
     @Autowired
     SellerServices Service;
 
-    @PostMapping("/saveSeller")
-    public String saveSeller(@RequestBody Seller seller) {
+    @PostMapping
+    public String saveSeller(@Valid @RequestBody Seller seller) {
         return this.Service.saveSeller(seller);
     }
     @PostMapping("/addNewPropertyToSeller/{id}")
     public String addNewPropToSeller(@PathVariable("id") Long id,  @RequestBody Property property) {return this.Service.addNewPropToSeller(id, property);}
 
 
-    @GetMapping("/getAllSellers")
+    @GetMapping
     public List<Seller> getAllSellers () {
         return this.Service.getAll();
     }
