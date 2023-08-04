@@ -66,8 +66,8 @@ const BuyerForm = () => {
     <>
         <Form onSubmit = {handleSubmit}>
           <Form.Label>Enter new Buyer</Form.Label>
-            <Row className="mb-3">
-            <Form.Group as={Col} controlId="formtitle">
+         <Row className="mb-3">
+         <Form.Group as={Col} controlId="formtitle">
 
         <Form.Label>Title</Form.Label>
         <Form.Select aria-label="Default" value={buyertitle} onChange={(e) => setBuyerTitle(e.target.value)}>
