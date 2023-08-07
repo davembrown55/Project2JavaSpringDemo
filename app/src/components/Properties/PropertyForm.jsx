@@ -66,9 +66,9 @@ const PropertyForm = () => {
             <Form.Label>Status</Form.Label>
             <Form.Select aria-label="Default" value={propStatus} onChange={(e) => setPropStatus(e.target.value)}>
             <option>Choose</option>
-            <option value={propStatus} onChange={(e) => setPropStatus(e.target.value)}>FORSALE</option>
-            <option value={propStatus} onChange={(e) => setPropStatus(e.target.value)}>WITHDRAWN</option>
-            <option value={propStatus} onChange={(e) => setPropStatus(e.target.value)}>SOLD</option>
+            <option value="FORSALE" onChange={(e) => setPropStatus(e.target.value)}>For Sale</option>
+            <option value="WITHDRAWN" onChange={(e) => setPropStatus(e.target.value)}>Withdrawn</option>
+            <option value="SOLD" onChange={(e) => setPropStatus(e.target.value)}>Sold</option>
             </Form.Select>
             </Form.Group>
 
@@ -76,10 +76,10 @@ const PropertyForm = () => {
             <Form.Label>Type</Form.Label>
             <Form.Select aria-label="Default" value={propType} onChange={(e) => setPropType(e.target.value)}>
             <option>Choose</option>
-            <option value={propType} onChange={(e) => setPropType(e.target.value)}>DETACHED</option>
-            <option value={propType} onChange={(e) => setPropType(e.target.value)}>SEMI</option>
-            <option value={propType} onChange={(e) => setPropType(e.target.value)}>APARTMENT</option>
-            <option value={propType} onChange={(e) => setPropType(e.target.value)}>TERRACE</option>
+            <option value="DETACHED" onChange={(e) => setPropType(e.target.value)}>Detached</option>
+            <option value="SEMI" onChange={(e) => setPropType(e.target.value)}>Semi</option>
+            <option value="APARTMENT" onChange={(e) => setPropType(e.target.value)}>Apartment</option>
+            <option value="TERRACE" onChange={(e) => setPropType(e.target.value)}>Terrace</option>
             </Form.Select>
             </Form.Group>
 
@@ -124,8 +124,8 @@ const PropertyForm = () => {
             <Form.Label>Garden</Form.Label>
             <Form.Select aria-label="Default" value={propGarden} onChange={(e) => setPropGarden(e.target.value)}>
             <option>Choose</option>
-            <option value={propGarden} onChange={(e) => setPropGarden(e.target.value)}>true</option>
-            <option value={propGarden} onChange={(e) => setPropGarden(e.target.value)}>false</option>
+            <option value="true" onChange={(e) => setPropGarden(e.target.value)}>Yes</option>
+            <option value="false" onChange={(e) => setPropGarden(e.target.value)}>No</option>
             </Form.Select>
             </Form.Group>
 
