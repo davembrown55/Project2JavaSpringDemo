@@ -74,10 +74,10 @@ const SellerForm = () => {
         <Form.Label>Title</Form.Label>
         <Form.Select aria-label="Default" value={sellertitle} onChange={(e) => setsellerTitle(e.target.value)}>
         <option>Choose</option>
-        <option value={sellertitle} onChange={(e) => setsellerTitle(e.target.value)}>Mr</option>
-        <option value={sellertitle} onChange={(e) => setsellerTitle(e.target.value)}>Miss</option>
-        <option value={sellertitle} onChange={(e) => setsellerTitle(e.target.value)}>Mrs</option>
-        <option value={sellertitle} onChange={(e) => setsellerTitle(e.target.value)}>Dr</option>
+        <option value="Mr" onChange={(e) => setsellerTitle(e.target.value)}>Mr</option>
+        <option value="Miss"onChange={(e) => setsellerTitle(e.target.value)}>Miss</option>
+        <option value="Mrs"onChange={(e) => setsellerTitle(e.target.value)}>Mrs</option>
+        <option value="Dr" onChange={(e) => setsellerTitle(e.target.value)}>Dr</option>
         </Form.Select>
       </Form.Group>
         <Form.Group as={Col}  controlId="formfirstname">
