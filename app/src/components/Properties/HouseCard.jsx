@@ -5,7 +5,7 @@ import styles from './Property.module.css'
 
 // Button click for viewing booking
 
-const HouseCard = ({    id, type, address, postcode, imageUrl, price, bedroom, bathroom, garden, forSale}) => {
+const HouseCard = ({id, type, address, postcode, imageUrl, price, bedroom, bathroom, garden, status /*forSale*/}) => {
 
 
 
@@ -29,11 +29,11 @@ const HouseCard = ({    id, type, address, postcode, imageUrl, price, bedroom, b
 
                     <h3>£{price}</h3>
                     <p>{bedroom} Bedrooms &nbsp;&amp;&nbsp;{bathroom} Bathrooms. {garden} Garden </p>
-                    <h3> Status: {forSale}  </h3>
+                    <h3> Status: {status}  </h3>
                     <button onClick={flipButtonText} 
                     className={styles[whenClicked ? 'viewing-booked' : 'book-viewing']}
                     >
-                        {whenClicked ? 'Viewing Booked' : 'Book Viewing' }          
+                        {whenClicked ? 'Update' : 'Update' }
                     </button>
                     
                  </div>

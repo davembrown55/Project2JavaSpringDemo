@@ -59,7 +59,7 @@ function Properties () {
                 {data.filter(item => {
                     if (query === '') {
                         return item;
-                    } else if (item.type.toLowerCase().includes(query.toLowerCase()) || (item.forSale.toLowerCase().includes(query.toLowerCase()) || (item.address.toLowerCase().includes(query.toLowerCase()) || (item.postcode.toLowerCase().includes(query.toLowerCase()) )))) {
+                    } else if (item.type.toLowerCase().includes(query.toLowerCase()) || (item.status.toLowerCase().includes(query.toLowerCase()) || (item.address.toLowerCase().includes(query.toLowerCase()) || (item.postcode.toLowerCase().includes(query.toLowerCase()) )))) {
                         return item;
                     }
                 }).map((item) =>(                   
@@ -73,7 +73,7 @@ function Properties () {
                     bedroom={item.bedroom}
                     bathroom={item.bathroom}
                     garden={item.garden}
-                    forSale={item.forSale}                    
+                    status={item.status}
                     />    
                     
                     ))}

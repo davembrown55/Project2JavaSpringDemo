@@ -28,12 +28,12 @@ public class PropertyController {
         return this.pService.getById(id);
     }
 
-    @GetMapping("/GetAllPropertiesBySellerId/{id}")
+    @GetMapping("/AssociatedWithSeller/{id}")
     public  List<Property> GetallpropertiesBySellerId (@PathVariable("id") Long id) {
         return this.pService.findBySellerId(id);
     }
 
-    @GetMapping("/GetAllPropertiesByBuyerId/{id}")
+    @GetMapping("/AssociatedWithBuyerId/{id}")
     public  List<Property> GetallpropertiesByBuyerId (@PathVariable("id") Long id) {
         return this.pService.findByBuyerId(id);
     }
